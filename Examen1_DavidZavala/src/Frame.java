@@ -1,9 +1,13 @@
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author 50431
@@ -43,7 +47,7 @@ public class Frame extends javax.swing.JFrame {
         SaveCampista2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jSpinner3 = new javax.swing.JSpinner();
+        desaparecidos = new javax.swing.JSpinner();
         SaveJason = new javax.swing.JButton();
         Nombre = new javax.swing.JTextField();
         RBFemenino = new javax.swing.JRadioButton();
@@ -70,28 +74,34 @@ public class Frame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         MovePersona = new javax.swing.JButton();
         MoveFiles = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         AddPersona.setUndecorated(true);
         AddPersona.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
         jLabel4.setText("Nombre");
         AddPersona.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 100, 40));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
         jLabel5.setText("Edad");
         AddPersona.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 90, 40));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("Sexo");
         AddPersona.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 100, 40));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
         jLabel8.setText("Nueva persona");
         AddPersona.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 270, 40));
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 153, 153));
         jLabel11.setText("Arma");
         AddPersona.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 110, 40));
 
@@ -116,6 +126,11 @@ public class Frame extends javax.swing.JFrame {
         SaveCampista2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Save.png"))); // NOI18N
         SaveCampista2.setBorder(null);
         SaveCampista2.setContentAreaFilled(false);
+        SaveCampista2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveCampista2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(SaveCampista2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 60, 60));
 
         jTabbedPane1.addTab("Campista", jPanel1);
@@ -125,11 +140,16 @@ public class Frame extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel10.setText("Desaparecidos");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 170, 40));
-        jPanel2.add(jSpinner3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 60, 40));
+        jPanel2.add(desaparecidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 60, 40));
 
         SaveJason.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Save.png"))); // NOI18N
         SaveJason.setBorder(null);
         SaveJason.setContentAreaFilled(false);
+        SaveJason.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveJasonActionPerformed(evt);
+            }
+        });
         jPanel2.add(SaveJason, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 60, 60));
 
         jTabbedPane1.addTab("Jason", jPanel2);
@@ -139,24 +159,34 @@ public class Frame extends javax.swing.JFrame {
         Nombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         AddPersona.getContentPane().add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 120, 40));
 
+        Sexo.add(RBFemenino);
         RBFemenino.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        RBFemenino.setForeground(new java.awt.Color(153, 153, 153));
         RBFemenino.setText("F");
         AddPersona.getContentPane().add(RBFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, -1, -1));
 
+        Sexo.add(RBMasculino);
         RBMasculino.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        RBMasculino.setForeground(new java.awt.Color(153, 153, 153));
         RBMasculino.setText("M");
         AddPersona.getContentPane().add(RBMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, -1, -1));
 
         Edad.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Edad.setModel(new javax.swing.SpinnerNumberModel(13, 13, null, 1));
         AddPersona.getContentPane().add(Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 70, 50));
 
         CBArma.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        CBArma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Campista", "Supervisor" }));
+        CBArma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hacha", "Pistola", "Bate", "Pala", "Sierra", "Puños" }));
         AddPersona.getContentPane().add(CBArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, 130, 40));
 
         Backpersonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Back.png"))); // NOI18N
         Backpersonas.setBorder(null);
         Backpersonas.setContentAreaFilled(false);
+        Backpersonas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackpersonasActionPerformed(evt);
+            }
+        });
         AddPersona.getContentPane().add(Backpersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 60));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/WhatsApp Image 2020-08-31 at 19.32.39.jpeg"))); // NOI18N
@@ -168,6 +198,11 @@ public class Frame extends javax.swing.JFrame {
         BackArchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Back.png"))); // NOI18N
         BackArchivo.setBorder(null);
         BackArchivo.setContentAreaFilled(false);
+        BackArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackArchivoActionPerformed(evt);
+            }
+        });
         Files.getContentPane().add(BackArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 60));
 
         jPanel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -176,6 +211,11 @@ public class Frame extends javax.swing.JFrame {
         DeleteCampista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Delete.png"))); // NOI18N
         DeleteCampista.setBorder(null);
         DeleteCampista.setContentAreaFilled(false);
+        DeleteCampista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteCampistaActionPerformed(evt);
+            }
+        });
         jPanel3.add(DeleteCampista, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 60, 60));
 
         EditCampsita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Edit.png"))); // NOI18N
@@ -222,11 +262,21 @@ public class Frame extends javax.swing.JFrame {
         EditJason.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Edit.png"))); // NOI18N
         EditJason.setBorder(null);
         EditJason.setContentAreaFilled(false);
+        EditJason.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditJasonActionPerformed(evt);
+            }
+        });
         jPanel4.add(EditJason, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 60, 60));
 
         DeleteJason.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Delete.png"))); // NOI18N
         DeleteJason.setBorder(null);
         DeleteJason.setContentAreaFilled(false);
+        DeleteJason.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteJasonActionPerformed(evt);
+            }
+        });
         jPanel4.add(DeleteJason, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 60, 60));
 
         TableJason.setModel(new javax.swing.table.DefaultTableModel(
@@ -272,6 +322,7 @@ public class Frame extends javax.swing.JFrame {
         Files.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 140, 280, 450));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("Archivo");
         Files.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 220, 60));
 
@@ -284,12 +335,27 @@ public class Frame extends javax.swing.JFrame {
         MovePersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/big New Person.png"))); // NOI18N
         MovePersona.setBorder(null);
         MovePersona.setContentAreaFilled(false);
-        getContentPane().add(MovePersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, 270));
+        MovePersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MovePersonaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(MovePersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, 270));
 
         MoveFiles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Big Files.png"))); // NOI18N
         MoveFiles.setBorder(null);
         MoveFiles.setContentAreaFilled(false);
-        getContentPane().add(MoveFiles, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 350, -1, 270));
+        MoveFiles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MoveFilesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(MoveFiles, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, -1, 270));
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 56)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel12.setText("Lake Cristal Camp");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 540, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/WhatsApp Image 2020-08-31 at 19.32.39.jpeg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 630));
@@ -297,9 +363,173 @@ public class Frame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void MovePersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MovePersonaActionPerformed
+        this.setVisible(false);
+        AddPersona.pack();
+        AddPersona.setLocationRelativeTo(this);
+        AddPersona.setVisible(true);
+    }//GEN-LAST:event_MovePersonaActionPerformed
+
+    private void MoveFilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoveFilesActionPerformed
+        this.setVisible(false);
+        Files.pack();
+        Files.setLocationRelativeTo(this);
+        Files.setVisible(true);
+        Object[] ray = new Object[4];
+        for (int i = 0; i < Personas.size(); i++) {
+            ray[0] = Personas.get(i).getNombre();
+            ray[1] = Personas.get(i).getEdad();
+            ray[2] = Personas.get(i).getEstado();
+            ray[3] = Personas.get(i).getTipo();
+            DefaultTableModel TabModel = (DefaultTableModel) TableCampistas.getModel();
+            TabModel.addRow(ray);
+        }
+        for (int i = 0; i < Jasons.size(); i++) {
+            ray[0] = Jasons.get(i).getNombre();
+            ray[1] = Jasons.get(i).getEdad();
+            ray[2] = Jasons.get(i).getVictimas();
+            DefaultTableModel TabModel = (DefaultTableModel) TableCampistas.getModel();
+            TabModel.addRow(ray);
+        }
+    }//GEN-LAST:event_MoveFilesActionPerformed
+
+    private void BackpersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackpersonasActionPerformed
+        AddPersona.setVisible(false);
+        this.pack();
+        this.setLocationRelativeTo(this);
+        this.setVisible(true);
+    }//GEN-LAST:event_BackpersonasActionPerformed
+
+    private void BackArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackArchivoActionPerformed
+        Files.setVisible(false);
+        this.pack();
+        this.setLocationRelativeTo(this);
+        this.setVisible(true);
+    }//GEN-LAST:event_BackArchivoActionPerformed
+
+    private void SaveCampista2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveCampista2ActionPerformed
+        try {
+            String Nombre = this.Nombre.getText();
+            int Edad = this.Edad.getComponentCount();
+            String Sexo = null;
+            boolean sx = true;
+            while (sx == true) {
+                if (RBMasculino.isSelected()) {
+                    Sexo = "Masculino";
+                    sx = false;
+                } else if (RBFemenino.isSelected()) {
+                    Sexo = "Femenino";
+                    sx = false;
+                } else if (!RBFemenino.isSelected() || !RBFemenino.isSelected()) {
+                    JOptionPane.showMessageDialog(null, "Elija un Sexo");
+                } else if (!RBFemenino.isSelected() || !RBFemenino.isSelected()) {
+                    JOptionPane.showMessageDialog(null, "Elija un Sexo");
+                }
+            }
+            String Tipo = (String) CBTipo.getSelectedItem();
+            String Estado = (String) CBEstado.getSelectedItem();
+            String Arma = (String) CBArma.getSelectedItem();
+            Campista temp = new Campista(Tipo, Estado, Nombre, WIDTH, Sexo, Arma);
+            Personas.add(temp);
+            this.Nombre.setText("");
+            CBTipo.setSelectedIndex(0);
+            CBEstado.setSelectedIndex(0);
+            CBArma.setSelectedIndex(0);
+            RBFemenino.setSelected(false);
+            RBMasculino.setSelected(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Algo ha salido mal.");
+        }
+    }//GEN-LAST:event_SaveCampista2ActionPerformed
+
+    private void SaveJasonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveJasonActionPerformed
+        try {
+            String Nombre = this.Nombre.getText();
+            int Edad = this.Edad.getComponentCount();
+            String Sexo = null;
+            boolean sx = true;
+            while (sx == true) {
+                if (RBMasculino.isSelected()) {
+                    Sexo = "Masculino";
+                    sx = false;
+                } else if (RBFemenino.isSelected()) {
+                    Sexo = "Femenino";
+                    sx = false;
+                } else if (!RBFemenino.isSelected() || !RBFemenino.isSelected()) {
+                    JOptionPane.showMessageDialog(null, "Elija un Sexo");
+                } else if (!RBFemenino.isSelected() || !RBFemenino.isSelected()) {
+                    JOptionPane.showMessageDialog(null, "Elija un Sexo");
+                }
+            }
+            String Tipo = (String) CBTipo.getSelectedItem();
+            String Estado = (String) CBEstado.getSelectedItem();
+            String Arma = (String) CBArma.getSelectedItem();
+            int desaparecidos = this.desaparecidos.getComponentCount();
+            Jason jason = new Jason(desaparecidos, Nombre, Edad, Sexo, Arma);
+            Jasons.add(jason);
+            this.Nombre.setText("");
+            CBTipo.setSelectedIndex(0);
+            CBEstado.setSelectedIndex(0);
+            CBArma.setSelectedIndex(0);
+            RBFemenino.setSelected(false);
+            RBMasculino.setSelected(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Algo ha salido mal.");
+        }
+    }//GEN-LAST:event_SaveJasonActionPerformed
+
+    private void DeleteJasonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteJasonActionPerformed
+        try {
+            DefaultTableModel TabModel = (DefaultTableModel) TableJason.getModel();
+            TabModel.removeRow(Integer.parseInt(JOptionPane.showInputDialog("Fila a Eliminar")));
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Algo ha salido mal");
+        }
+
+    }//GEN-LAST:event_DeleteJasonActionPerformed
+
+    private void DeleteCampistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteCampistaActionPerformed
+        try {
+            DefaultTableModel TabModel = (DefaultTableModel) TableCampistas.getModel();
+            TabModel.removeRow(Integer.parseInt(JOptionPane.showInputDialog("Fila a Eliminar")));
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Algo ha salido mal");
+        }
+    }//GEN-LAST:event_DeleteCampistaActionPerformed
+
     private void EditCampsitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditCampsitaActionPerformed
-        // TODO add your handling code here:
+        try {
+            Object[] ray = new Object[4];
+            int fila = Integer.parseInt(JOptionPane.showInputDialog("Fila a Modificar"));
+            String nom = JOptionPane.showInputDialog("Nombre");
+            int ed = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+            Personas.get(fila).setNombre(nom);
+            Personas.get(fila).setEdad(ed);
+            JOptionPane.showMessageDialog(null, "Actualizacion exitosa \npara actualizar las tablas del archivo \nsalga del mismo y vuelv aa entrar");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Algo ha salido mal");
+        }
     }//GEN-LAST:event_EditCampsitaActionPerformed
+
+    private void EditJasonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditJasonActionPerformed
+        try {
+            Object[] ray = new Object[4];
+            int fila = Integer.parseInt(JOptionPane.showInputDialog("Fila a Modificar"));
+            String nom = JOptionPane.showInputDialog("Nombre");
+            int ed = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+            Jasons.get(fila).setNombre(nom);
+            Jasons.get(fila).setEdad(ed);
+            JOptionPane.showMessageDialog(null, "Actualizacion exitosa \npara actualizar las tablas del archivo \nsalga del mismo y vuelva a entrar");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Algo ha salido mal");
+        }
+    }//GEN-LAST:event_EditJasonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -359,10 +589,12 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.ButtonGroup Sexo;
     private javax.swing.JTable TableCampistas;
     private javax.swing.JTable TableJason;
+    private javax.swing.JSpinner desaparecidos;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -378,8 +610,10 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JSpinner jSpinner3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
+    // Own Variables
+    ArrayList<Campista> Personas = new ArrayList();
+    ArrayList<Jason> Jasons = new ArrayList();
 }

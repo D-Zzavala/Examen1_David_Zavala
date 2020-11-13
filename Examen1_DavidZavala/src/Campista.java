@@ -6,7 +6,7 @@ public class Campista extends Persona{
     public Campista() {
     }
 
-    public Campista(String Tipo, String Estado, String Nombre, int edad, String sexo, Arma arma) {
+    public Campista(String Tipo, String Estado, String Nombre, int edad, String sexo, String arma) {
         super(Nombre, edad, sexo, arma);
         this.Tipo = Tipo;
         this.Estado = Estado;

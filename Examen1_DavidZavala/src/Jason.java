@@ -5,7 +5,7 @@ public class Jason extends Persona{
     public Jason() {
     }
 
-    public Jason(int Victimas, String Nombre, int edad, String sexo, Arma arma) {
+    public Jason(int Victimas, String Nombre, int edad, String sexo, String arma) {
         super(Nombre, edad, sexo, arma);
         this.Victimas = Victimas;
     }

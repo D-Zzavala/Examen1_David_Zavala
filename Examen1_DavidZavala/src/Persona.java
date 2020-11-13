@@ -3,12 +3,12 @@ public class Persona {
 private String Nombre;
 private int edad;
 private String sexo;
-private Arma arma;
+private String arma;
 
     public Persona() {
     }
 
-    public Persona(String Nombre, int edad, String sexo, Arma arma) {
+    public Persona(String Nombre, int edad, String sexo, String arma) {
         this.Nombre = Nombre;
         this.edad = edad;
         this.sexo = sexo;
@@ -39,11 +39,11 @@ private Arma arma;
         this.sexo = sexo;
     }
 
-    public Arma getArma() {
+    public String getArma() {
         return arma;
     }
 
-    public void setArma(Arma arma) {
+    public void setArma(String arma) {
         this.arma = arma;
     }
 
