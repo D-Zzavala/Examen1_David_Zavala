@@ -15,6 +15,7 @@ public class Frame extends javax.swing.JFrame {
      */
     public Frame() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,16 +27,279 @@ public class Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Sexo = new javax.swing.ButtonGroup();
+        AddPersona = new javax.swing.JDialog();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        CBEstado = new javax.swing.JComboBox<>();
+        CBTipo = new javax.swing.JComboBox<>();
+        SaveCampista2 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jSpinner3 = new javax.swing.JSpinner();
+        SaveJason = new javax.swing.JButton();
+        Nombre = new javax.swing.JTextField();
+        RBFemenino = new javax.swing.JRadioButton();
+        RBMasculino = new javax.swing.JRadioButton();
+        Edad = new javax.swing.JSpinner();
+        CBArma = new javax.swing.JComboBox<>();
+        Backpersonas = new javax.swing.JButton();
+        fondo = new javax.swing.JLabel();
+        Files = new javax.swing.JDialog();
+        BackArchivo = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        DeleteCampista = new javax.swing.JButton();
+        EditCampsita = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TableCampistas = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        EditJason = new javax.swing.JButton();
+        DeleteJason = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TableJason = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        MovePersona = new javax.swing.JButton();
+        MoveFiles = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+
+        AddPersona.setUndecorated(true);
+        AddPersona.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel4.setText("Nombre");
+        AddPersona.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 100, 40));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel5.setText("Edad");
+        AddPersona.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 90, 40));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel6.setText("Sexo");
+        AddPersona.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 100, 40));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel8.setText("Nueva persona");
+        AddPersona.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 270, 40));
+
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel11.setText("Arma");
+        AddPersona.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 110, 40));
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel7.setText("Estado");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 100, 40));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel9.setText("Tipo");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 100, 40));
+
+        CBEstado.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        CBEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "vivo", "Desaparecido" }));
+        jPanel1.add(CBEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 130, 40));
+
+        CBTipo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        CBTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Campista", "Supervisor" }));
+        jPanel1.add(CBTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 130, 40));
+
+        SaveCampista2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Save.png"))); // NOI18N
+        SaveCampista2.setBorder(null);
+        SaveCampista2.setContentAreaFilled(false);
+        jPanel1.add(SaveCampista2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 60, 60));
+
+        jTabbedPane1.addTab("Campista", jPanel1);
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel10.setText("Desaparecidos");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 170, 40));
+        jPanel2.add(jSpinner3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 60, 40));
+
+        SaveJason.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Save.png"))); // NOI18N
+        SaveJason.setBorder(null);
+        SaveJason.setContentAreaFilled(false);
+        jPanel2.add(SaveJason, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 60, 60));
+
+        jTabbedPane1.addTab("Jason", jPanel2);
+
+        AddPersona.getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, 300, 280));
+
+        Nombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        AddPersona.getContentPane().add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 120, 40));
+
+        RBFemenino.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        RBFemenino.setText("F");
+        AddPersona.getContentPane().add(RBFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, -1, -1));
+
+        RBMasculino.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        RBMasculino.setText("M");
+        AddPersona.getContentPane().add(RBMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, -1, -1));
+
+        Edad.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        AddPersona.getContentPane().add(Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 70, 50));
+
+        CBArma.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        CBArma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Campista", "Supervisor" }));
+        AddPersona.getContentPane().add(CBArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, 130, 40));
+
+        Backpersonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Back.png"))); // NOI18N
+        Backpersonas.setBorder(null);
+        Backpersonas.setContentAreaFilled(false);
+        AddPersona.getContentPane().add(Backpersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 60));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/WhatsApp Image 2020-08-31 at 19.32.39.jpeg"))); // NOI18N
+        AddPersona.getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 630));
+
+        Files.setUndecorated(true);
+        Files.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BackArchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Back.png"))); // NOI18N
+        BackArchivo.setBorder(null);
+        BackArchivo.setContentAreaFilled(false);
+        Files.getContentPane().add(BackArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 60));
+
+        jPanel3.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        DeleteCampista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Delete.png"))); // NOI18N
+        DeleteCampista.setBorder(null);
+        DeleteCampista.setContentAreaFilled(false);
+        jPanel3.add(DeleteCampista, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 60, 60));
+
+        EditCampsita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Edit.png"))); // NOI18N
+        EditCampsita.setBorder(null);
+        EditCampsita.setContentAreaFilled(false);
+        EditCampsita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditCampsitaActionPerformed(evt);
+            }
+        });
+        jPanel3.add(EditCampsita, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 60, 60));
+
+        TableCampistas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Estado", "Tipo"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(TableCampistas);
+        if (TableCampistas.getColumnModel().getColumnCount() > 0) {
+            TableCampistas.getColumnModel().getColumn(0).setResizable(false);
+            TableCampistas.getColumnModel().getColumn(1).setResizable(false);
+            TableCampistas.getColumnModel().getColumn(2).setResizable(false);
+            TableCampistas.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 370));
+
+        Files.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 280, 450));
+
+        jPanel4.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        EditJason.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Edit.png"))); // NOI18N
+        EditJason.setBorder(null);
+        EditJason.setContentAreaFilled(false);
+        jPanel4.add(EditJason, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 60, 60));
+
+        DeleteJason.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Delete.png"))); // NOI18N
+        DeleteJason.setBorder(null);
+        DeleteJason.setContentAreaFilled(false);
+        jPanel4.add(DeleteJason, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 60, 60));
+
+        TableJason.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Desaparecidos"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(TableJason);
+        if (TableJason.getColumnModel().getColumnCount() > 0) {
+            TableJason.getColumnModel().getColumn(0).setResizable(false);
+            TableJason.getColumnModel().getColumn(1).setResizable(false);
+            TableJason.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 370));
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 270, 370));
+
+        Files.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 140, 280, 450));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabel2.setText("Archivo");
+        Files.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 220, 60));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/WhatsApp Image 2020-08-31 at 19.32.39.jpeg"))); // NOI18N
+        Files.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 630));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        MovePersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/big New Person.png"))); // NOI18N
+        MovePersona.setBorder(null);
+        MovePersona.setContentAreaFilled(false);
+        getContentPane().add(MovePersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, 270));
+
+        MoveFiles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Big Files.png"))); // NOI18N
+        MoveFiles.setBorder(null);
+        MoveFiles.setContentAreaFilled(false);
+        getContentPane().add(MoveFiles, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 350, -1, 270));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/WhatsApp Image 2020-08-31 at 19.32.39.jpeg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void EditCampsitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditCampsitaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditCampsitaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -73,6 +337,49 @@ public class Frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog AddPersona;
+    private javax.swing.JButton BackArchivo;
+    private javax.swing.JButton Backpersonas;
+    private javax.swing.JComboBox<String> CBArma;
+    private javax.swing.JComboBox<String> CBEstado;
+    private javax.swing.JComboBox<String> CBTipo;
+    private javax.swing.JButton DeleteCampista;
+    private javax.swing.JButton DeleteJason;
+    private javax.swing.JSpinner Edad;
+    private javax.swing.JButton EditCampsita;
+    private javax.swing.JButton EditJason;
+    private javax.swing.JDialog Files;
+    private javax.swing.JButton MoveFiles;
+    private javax.swing.JButton MovePersona;
+    private javax.swing.JTextField Nombre;
+    private javax.swing.JRadioButton RBFemenino;
+    private javax.swing.JRadioButton RBMasculino;
+    private javax.swing.JButton SaveCampista2;
+    private javax.swing.JButton SaveJason;
+    private javax.swing.ButtonGroup Sexo;
+    private javax.swing.JTable TableCampistas;
+    private javax.swing.JTable TableJason;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSpinner jSpinner3;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
